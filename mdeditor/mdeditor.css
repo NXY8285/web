@@ -156,30 +156,13 @@
     margin-bottom: 18px;
 }
 
-.mdeditor-html .mdeditor-inline-code,
-.mdeditor-html pre,
-.mdeditor-html code {
-    font-family: "YaHei Consolas Hybrid", Consolas, "Meiryo UI", "Malgun Gothic", "Segoe UI", "Trebuchet MS", Helvetica, monospace, monospace;
-}
-
-.mdeditor-html .mdeditor-inline-code {
-    padding: 3px 5px;
-    margin: 0 2px;
-    border: 1px solid #ccc;
-    color: #c7254e;
-    background-color: #f9f2f4;
-    white-space: nowrap;
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
-}
-
 .mdeditor-ul,
 .mdeditor-ol {
     padding: 0 2em;
     line-height: 2em;
 }
 
-.mdeditor-html .mdeditor-code {
+.mdeditor-html  {
     padding: 0 0 0 10px;
     margin: 20px 0;
     border-radius: 0;
@@ -188,48 +171,17 @@
     font-size: 14px;
 }
 
-.mdeditor-html .mdeditor-code ol {
+.mdeditor-html  ol {
     margin: 0 0 0 50px;
     padding: 0;
     color: #aaa;
 }
 
-.mdeditor-html .mdeditor-code li {
+.mdeditor-html  li {
     padding: 0 20px;
     line-height: 2em;
     list-style: inherit;
     background: #272822;
-}
-
-.mdeditor-html .mdeditor-code li code {
-    color: #efefef;
-    word-break: break-word;
-}
-
-.mdeditor-html .mdeditor-code li.mdeditor-code-line-first {
-    padding-top: 10px;
-}
-
-.mdeditor-html .mdeditor-code li.mdeditor-code-line-last {
-    padding-bottom: 10px;
-}
-
-.mdeditor-table {
-    width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-.mdeditor-table th {
-    background: #f1f1f1;
-    color: #666;
-    font-weight: normal;
-}
-
-.mdeditor-table th,
-.mdeditor-table td {
-    padding: 10px;
-    border: 1px solid #ddd;
 }
 
 .css-property-name {
