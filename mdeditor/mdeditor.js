@@ -182,6 +182,7 @@
         },
 
         handleInlineSet: function (txt) {
+			txt = this.handleEscape(txt);
             txt = this.handleLink(txt);
 			txt = this.handleStrong(txt);
 			txt = this.handleEm(txt);
@@ -221,12 +222,27 @@
             return '<li>' + txt + '</li>';
         },
 		
-		/*html2Escape: function (txt) {
- 			return txt.replace(/[<>&"]/g,function(c){
+		handleEscape: function (txt) {
+ 			/*return txt.replace(/[<>&"]/g,function(c){
    				return {'\\':'\',  '\`':'`',  "\*":"*",  "\_":"_",  "\{":"{",  "\}":"}",  "\[":"[",  "\]":"]",  "\(":"(",  "\)":")",  "\+":"+","\-":"-","\.":".","\!":'!'','\#':'#'}[c];
- 			});
+ 			});*/
+			if (txt.match(/\\[\\`\*_{}\[\]()#\+.!\-]/)) {
+        var Escape = "";
+
+        var k = 0,
+          i = 0;
+        var temp = "";
+        while (txt.match(/\\[\\`\*_{}\[\]()#\+.!\-]/g)) {
+          Escape = txt.match(/\\[\\`\*_{}\[\]()#\+.!\-]/g);
+          for (k = 0; k < Escape.length; k++) {
+            txt = txt.replace(Escape[k], Escape[k][1]);
+          }
+        }
+      }
+		return txt;	
 		},
-        */
+        
+		
 
         replaceHtmlTag: function (txt) {
             return txt.replace(/\</g, '&lt;').replace(/\>/, '&gt;');
@@ -234,4 +250,4 @@
     };
     mdeditor.prototype.init.prototype = mdeditor.prototype;
     window.mdeditor = mdeditor;
-})(window);// JavaScript Document
+})(window);
