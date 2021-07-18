@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body, input, select, textarea {
+            font-family: Helvetica, Arial, "Hiragino Sans GB", "Microsoft Yahei", "微软雅黑", STHeiti, "华文细黑", sans-serif;
+        }
+
+        #wrap{
+            height:400px;
+        }
+
+    </style>
+
+
+    <link href="mdeditor.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+<div id="wrap">
+
+</div>
+
+
+<script src="mdeditor.js"></script>
+
+<script>
+    var mdeditor = mdeditor({
+        id: 'wrap',
+        placeholder:'请输入markdown语法文本，右边同步预览html'
+    });
+    console.log(mdeditor);
+</script>
+</body>
+</html>
