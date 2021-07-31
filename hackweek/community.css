@@ -303,13 +303,12 @@ hr{
    width: 170px;
    color: rgba(142, 142, 147, 100);
    font-size: 14px;
-   display: flex;
    font-family: PingFangSC-regular;
    float: right;
-   margin-right: 10px;
-   justify-content: space-between;
+   right: 10px;
    margin-top: 28px;
-   margin-bottom: 6px;
+   bottom: 6px;
+   position: absolute;
 }
 .lable{
    width: 56px;
@@ -343,7 +342,7 @@ font-size: 16px;
 font-family: PingFangSC-regular;
 padding-top: 4px;
 }
-.topic-unit .back{
+.back{
    width: 17px;
    height: 17px;
    float: left;
@@ -527,6 +526,9 @@ margin: 10px 20px;
 }
 .mine a{
    color: black;
+}
+.dt-top{
+   text-align: center;
 }
 .container.detail{
    top:72px;

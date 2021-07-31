@@ -2,6 +2,7 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="community.css">
+        <script async src="app.js"></script>
     	<script async src="community.js"></script>
     </head>
     <body>
@@ -24,8 +25,8 @@
             </div>
             
         </div>
-        <div class="container-post">
-            
+        <div class="container-post" id="post">
+            <input id="post-content" type="text"/>
         </div>
         <div class="bottom">
             <div class="func-icon">
@@ -53,7 +54,19 @@
             </div>
         </div>
         </div>
-                    
-        
+        <script>
+            let ctt=document.getElementById("post-content").innerText;            
+            let data = {"content":ctt};
+            tools.ajaxGet(urlCommunity,data, function(res){
+	            console.log('返回的数据:',res)
+	// ....
+                /*for(i in res){
+                    x+='<div class="comment" id='+res[i]._id+'><div ><a href=""class="user"><div class="logo"><img src=""></div><div class="name">'+res[i]._id+'</div></a></div><div class="content">'+res[i].content+'</div>';
+                    x+='<div class="appendix"><span class="time">'+res[i].date+'</span><a id="" class="" href="details.html?-id='+res[i]._id+'><span class="show-more">详情</span></a></div><div class="lable">#'+res[i].tag+"</div>";
+                    document.getElementById("comment").innerHTML=x;
+                }*/
+            });
+            </script>            
+            
     </body>
 </html>

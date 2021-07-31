@@ -103,3 +103,32 @@ var tools = {
 // 调用
 // 接口地址
 
+var x; 
+
+            let urlCommunity = "http://101.133.136.243:3000/community";
+// 传输数据 为object
+            tools.ajaxGet(urlCommunity, null, function(res){
+	            console.log('返回的数据:',res)
+	// ....
+                for(i in res){
+                    x+='<div class="comment" id='+res[i]._id+'><div ><a href=""class="user"><div class="logo"><img src=""></div><div class="name">'+res[i]._id+'</div></a></div><div class="content">'+res[i].content+'</div>';
+                    x+='<div class="appendix"><span class="time">'+res[i].date+'</span><a id="" class="" href="details.html?-id='+res[i]._id+'><span class="show-more">详情</span></a></div><div class="lable">#'+res[i].tag+"</div>";
+                    document.getElementById("comment").innerHTML=x;
+                }
+            });
+var y;            
+let urlDetails="http://101.133.136.243:3000/community/comment";
+var Url=document.URL;
+const search=location.search.substr(1)
+const p= new URLSearchParams(search) ;
+var _id=p.get(_id);
+tools.ajaxGet(urlDetails, _id, function(res){
+	console.log('返回的数据:',res)
+	
+        y+='<div class="comment" id='+res[i]._id+'><div ><a class="user"><div class="logo"><img src=""></div><div class="name">'+res[i]._id+'</div></a></div><div class="content detail">'+res[i].content+'</div>';
+        y+='<div class="appendix"><span class="time">'+res[i].date+'</span></div><div class="lable">#'+res[i].tag+"</div>";
+        y+='<div class="operate"></div>赞'+res[i].like+' 评论'+res[i].comments+'  转发'+res[i].retweet+'</div><hr/>';
+        document.getElementById("comment-detail").innerHTML=y;
+   
+    
+});
